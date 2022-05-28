@@ -1,0 +1,8 @@
+{
+  "name": "Wiki planta",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "2316cc1a"
+}
