@@ -1,8 +1,7 @@
 {
-  "name": "Wiki planta",
+  "name": "ionic-angular-course",
   "integrations": {
     "capacitor": {}
   },
-  "type": "angular",
-  "id": "2316cc1a"
+  "type": "angular"
 }
