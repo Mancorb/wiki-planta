@@ -7,10 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  text = 'Default text'
-
-  onChangeText() {
-    this.text = 'Changed';
+  _ionChange(event){
+    console.log(event.detail.value);
   }
 
 }

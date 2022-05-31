@@ -1,6 +1,5 @@
 #container {
   text-align: center;
-
   position: absolute;
   left: 0;
   right: 0;
@@ -27,21 +26,16 @@
 }
 
 ion-item{
-  --background:#FAEDCD;
-}
-
-ion-item ion-thumbnail {
-  width: 20%;
-  height: 20%;
+  --background:#fbe3a6;
 }
 
 h1{
-  font-size:60px;
+  font-size:50px;
   color: black;
   font-weight: bold;
 }
 h2{
-  font-size:40px;
+  font-size:30px;
   color: black;
   font-weight: bold;
 }
@@ -53,5 +47,5 @@ ion-title{
 }
 ion-toolbar{
   padding-left: 15px;
-  --background:#CCD5AE;
+  --background:#bbc56a;
 }
