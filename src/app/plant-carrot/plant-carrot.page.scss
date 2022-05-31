@@ -3,6 +3,11 @@ ion-toolbar {
     --background: #CCD5AE;
 }
 
+ion-toolbar ion-item{
+    --background: #CCD5AE;
+    width: 12;
+}
+
 ion-title {
     color: white;
     font-size: 35px;
