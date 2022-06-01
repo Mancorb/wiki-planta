@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: 'plant-potato',
     loadChildren: () => import('./plant-potato/plant-potato.module').then( m => m.PlantPotatoPageModule)
+  },  {
+    path: 'ingreso-usuario',
+    loadChildren: () => import('./ingreso-usuario/ingreso-usuario.module').then( m => m.IngresoUsuarioPageModule)
   },
+
 ];
 
 @NgModule({
