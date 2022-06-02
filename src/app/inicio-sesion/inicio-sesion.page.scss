@@ -1,13 +1,14 @@
 ion-toolbar{
-    padding-left: 15px;
+    padding-left: 10px;
     --background:#d1d990;
 }
+
 
 ion-toolbar ion-title{
     color: #618f50;
     font-weight: bold;
     font-size:30px;
-    padding-left:25%;
+    padding-left:15%;
 }
 
 ion-toolbar ion-thumbnail{
@@ -15,6 +16,34 @@ ion-toolbar ion-thumbnail{
     height: 80px;
 }
 
+ion-card-title{
+    font-weight: bold;
+    font-size:25px;
+}
+
 ion-card{
-    color:#d1d990;
+    padding-left:5%;
+    padding-right:5%;
+    margin-bottom: 70%;
+    --background: #FAEDCD;
+}
+ion-list{
+    margin-bottom: 5%;
+    background-color: #FAEDCD;
+}
+ion-list ion-button{
+    margin-top:5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    --background: #D4A373;
+}
+ion-item{
+    --background: #FAEDCD;
+}
+
+ion-button{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
