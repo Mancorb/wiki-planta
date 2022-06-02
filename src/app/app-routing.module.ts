@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./registro-usuario/registro-usuario.module').then( m => m.RegistroUsuarioPageModule)
   },
   {
+    path: 'inicio-sesion',
+    loadChildren: () => import('./inicio-sesion/inicio-sesion.module').then( m => m.InicioSesionPageModule)
+  },
+  {
     path: 'plant-carrot',
     loadChildren: () => import('./plant-carrot/plant-carrot.module').then( m => m.PlantCarrotPageModule)
   },
