@@ -16,21 +16,27 @@
     <ion-card-title>Iniciar Sesión</ion-card-title>
   </ion-card-header>
 
-  <ion-card-content name="login-form">
-    
-    <div class = "list">
-      <label class = "item item-input item-floating-label">
-         <span class = "input-label"t>Nombre de Usuario</span>
-         <input type = "text" placeholder = "Nombre de Usuario" />
-      </label>
-   
-      <label class = "item item-input item-floating-label">
-         <span class = "input-label">Contraseña</span>
-         <input type = "password" placeholder = "Contraseña" />
-      </label>
 
-      <button class="button button-block button-balanced"> Iniciar Sesión </button> 
-   </div>
+<ion-list>
+  <ion-item color="light">
+    <ion-label position="floating">Email</ion-label>
+    <ion-input [(ngModel)]="email" type="text" required></ion-input>
+  </ion-item>
 
-  </ion-card-content>
+  <ion-item color="light">
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input [(ngModel)]="pwd" type="password" required></ion-input>
+  </ion-item>
+
+  <ion-button class="ion-margin-top" type="submit" expand="block" color="light" (click)="onSubmit()">
+    Iniciar Sesión
+  </ion-button>
+
+  <ion-item class="ion-text-center">
+    <ion-label>Todavía no tienes una cuenta?</ion-label>
+  </ion-item>
+
+  <ion-button color="dark" expand="block" fill="outline" [routerLink]="['/registro-usuario']">Registrarse</ion-button>
+</ion-list>
+
 </ion-card>
