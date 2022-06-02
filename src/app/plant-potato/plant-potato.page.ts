@@ -11,6 +11,8 @@ export class PlantPotatoPage implements OnInit {
   private res;
   private date;
   private judgement;
+  private calories;
+  NumPlants;
 
   constructor(
     private weatherAPI: WeatherService
@@ -37,6 +39,15 @@ export class PlantPotatoPage implements OnInit {
 
     });
     
+  }
+
+  getCalories(Ncalories: number){
+    console.log(this.NumPlants);
+    if (this.NumPlants==null){
+      this.calories =" 0 ";
+    }else{
+      this.calories = this.NumPlants*Ncalories;
+    }
   }
 
 }

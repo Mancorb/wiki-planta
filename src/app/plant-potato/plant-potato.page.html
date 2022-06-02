@@ -27,6 +27,10 @@
     es por su sabor.
   </p>
 
+  <h2>Se recomienda plantar hoy?</h2>
+  <ion-button (click)="checkConditions()">Verificar</ion-button>
+  <p>{{ judgement }}</p>
+
   <h2>Ciembra</h2>
   <p>
     La siembra de la patata tiende a hacerse de forma más o menos universal al inicio de la primavera,
@@ -63,9 +67,11 @@
   </ul>
 
   
-  <h2>Se recomienda plantar hoy?</h2>
-  <ion-button (click)="checkConditions()">Verificar</ion-button>
-  <p>{{ judgement }}</p>
+  <h2>Calorias estimadas por cantidad de plantas sembradas</h2>
+  
+  <ion-input type="number" placeholder=0 [(ngModel)]="NumPlants">Cantidad de plantas:</ion-input>
+  <ion-button (click)="getCalories(66)">Calcular</ion-button>
+  <p>R= {{ calories }} calorias</p>
   
 
   <h2>Cuidados</h2>
