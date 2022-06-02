@@ -31,10 +31,10 @@ export class PlantPotatoPage implements OnInit {
       console.log(this.res.weather[0].description);
       console.log(this.res.main.temp - 273.15);
       console.log(this.date);
-      if (this.res.weather[0].description=="Sunny" && (this.res.main.temp - 273.15) > 22 && this.date>5 && this.date<9) {
+      if (this.res.weather[0].description=="clear sky" && (this.res.main.temp - 273.15) > 19 && this.date>5 && this.date<9) {
         this.judgement = "Si se recomienda plantar";
       }else{
-        this.judgement = "No se recomienda plantar"
+        this.judgement = "No se recomienda plantar, temperatura >20ºC, dia soleado."
       }
 
     });
