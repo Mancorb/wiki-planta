@@ -28,8 +28,8 @@ h1{
 ion-card ion-item{
     padding-left:10%;
     padding-right:10%;
-    padding-bottom:10%;
-    --background:#e3ec96;
+    padding-bottom:1%;
+    --background:#f1f1f1;
 }
 ion-card ion-button{
     font-size:  25px;
@@ -37,14 +37,16 @@ ion-card ion-button{
     padding-right:10%;
     height:70px;
     width: 100%;
-    --background: rgb(242, 227, 108);
+    --background: #D4A373;
     color:black;
-    font-weight: bold
+    font-weight: bold;
+    margin-top:10px;
 }
 ion-card{
+    margin-top: 15%;
     margin-left:5%;
     margin-right:5%;
-    --background: rgb(213, 228, 187);
+    --background: #FAEDCD;
 }
 h2{
     font-size: 15px;
