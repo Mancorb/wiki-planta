@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { NavController } from '@ionic/angular';
 import userData from '../users.json';
+
 interface User {
   id:Number;
   email:String;
   password:String;
 }
-
-
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -16,20 +17,30 @@ interface User {
 
 export class InicioSesionPage implements OnInit {
 
-  email: string = "";
-  pwd: string = "";
+  Email = "";
+  Pass = "";
   users: User[] = userData;
+  Result = "";
 
-  constructor() { }
+  constructor(
+    public navCtrl: NavController,
+  ){}
+
 
   ngOnInit() {
-    this.onSubmit();
+
   }
 
   onSubmit() {
     for (let i = 0; i < this.users.length; i++){
-      if(this.email==this.users[i].email && this.pwd==this.users[i].password){
-        //Success in login
+      if(this.Email==this.users[i].email && this.Pass==this.users[i].password){
+        console.log("Success");
+        this.Result = "";
+        this.Email = "";
+        this.Pass = "";
+        this.navCtrl.navigateForward(['home']);
+      }else{
+        this.Result = "Correo o contraseña incorrecta"
       }
     }
   }
