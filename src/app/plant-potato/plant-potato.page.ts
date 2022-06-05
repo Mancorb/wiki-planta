@@ -7,12 +7,15 @@ import { WeatherService } from '../services/weather.service';
   styleUrls: ['./plant-potato.page.scss'],
 })
 export class PlantPotatoPage implements OnInit {
-
   private res;
   private date;
   private judgement;
   private calories;
   NumPlants;
+
+  private currentDate;
+  private harvestDate;
+  private ripeningdDays;
 
   constructor(
     private weatherAPI: WeatherService
@@ -20,7 +23,6 @@ export class PlantPotatoPage implements OnInit {
 
   ngOnInit() {
   }
-
 
   checkConditions(){
     this.weatherAPI.getWeatherData().subscribe((response) => {
@@ -36,9 +38,7 @@ export class PlantPotatoPage implements OnInit {
       }else{
         this.judgement = "No se recomienda plantar, temperatura >20ºC, dia soleado."
       }
-
     });
-    
   }
 
   getCalories(Ncalories: number){
@@ -48,6 +48,18 @@ export class PlantPotatoPage implements OnInit {
     }else{
       this.calories = this.NumPlants*Ncalories;
     }
+  }
+
+  harvestTime(NharvestDays: number){
+    const date = new Date();
+    const harvest = new Date();
+    harvest.setDate(harvest.getDate() + NharvestDays);
+    let currentDate = [date.getDate(), date.getMonth()+1, date.getFullYear()];
+    let harvestDate = [harvest.getDate(), harvest.getMonth()+1, harvest.getFullYear()];
+    
+    this.currentDate = "Fecha Actual: " + currentDate[0] + "/" + currentDate[1] + "/" + currentDate[2];
+    this.ripeningdDays = "Días de Maduración: " + NharvestDays;
+    this.harvestDate = "Fecha Cosecha Aprox: " + harvestDate[0] + "/" + harvestDate[1] + "/" + harvestDate[2];
   }
 
 }

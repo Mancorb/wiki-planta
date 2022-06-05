@@ -1,19 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../services/weather.service';
 
-
 @Component({
   selector: 'app-plant-lemon',
   templateUrl: './plant-lemon.page.html',
   styleUrls: ['./plant-lemon.page.scss'],
 })
 export class PlantLemonPage implements OnInit {
-
   private res;
   private date;
   private judgement;
   private calories;
   NumPlants;
+
+  private currentDate;
+  private harvestDate;
+  private ripeningdDays;
 
   constructor(
     private weatherAPI: WeatherService
@@ -22,7 +24,6 @@ export class PlantLemonPage implements OnInit {
   ngOnInit() {
     this.calories=0;
   }
-
 
   checkConditions(){
     this.weatherAPI.getWeatherData().subscribe((response) => {
@@ -38,9 +39,7 @@ export class PlantLemonPage implements OnInit {
       }else{
         this.judgement = "No se recomienda plantar, temperatura recomendada > 10ºC, dia soleado a finales del invierno."
       }
-
     });
-    
   }
 
   getCalories(Ncalories: number){
@@ -50,5 +49,17 @@ export class PlantLemonPage implements OnInit {
     }else{
       this.calories = this.NumPlants*Ncalories;
     }
+  }
+
+  harvestTime(NharvestDays: number){
+    const date = new Date();
+    const harvest = new Date();
+    harvest.setDate(harvest.getDate() + NharvestDays);
+    let currentDate = [date.getDate(), date.getMonth()+1, date.getFullYear()];
+    let harvestDate = [harvest.getDate(), harvest.getMonth()+1, harvest.getFullYear()];
+    
+    this.currentDate = "Fecha Actual: " + currentDate[0] + "/" + currentDate[1] + "/" + currentDate[2];
+    this.ripeningdDays = "Días de Maduración: " + NharvestDays;
+    this.harvestDate = "Fecha Cosecha Aprox: " + harvestDate[0] + "/" + harvestDate[1] + "/" + harvestDate[2];
   }
 }

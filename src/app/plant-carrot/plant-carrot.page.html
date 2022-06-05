@@ -125,6 +125,20 @@
     </li>
   </ol>
 
+  <h2>Tiempo de cosecha</h2>
+  <ion-button (click)="harvestTime(75)">Calcular</ion-button>
+  <div class="contentbox-harvest-date">
+    <p>{{ currentDate }}</p>
+    <p>{{ ripeningdDays }}</p>
+    <p>{{ harvestDate }}</p>
+  </div>
+
+  <h2>Calorias estimadas por cantidad de plantas sembradas</h2>
+  
+  <ion-input type="number" placeholder=0 [(ngModel)]="NumPlants">Cantidad de plantas:</ion-input>
+  <ion-button (click)="getCalories(41)">Calcular</ion-button>
+  <p>R= {{ calories }} calorias</p>
+
   <h2>Cuidados</h2>
   <ol>
     <li>

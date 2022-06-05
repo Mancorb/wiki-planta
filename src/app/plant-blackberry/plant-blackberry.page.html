@@ -74,6 +74,13 @@
     </li>
   </ul>
 
+  <h2>Tiempo de cosecha</h2>
+  <ion-button (click)="harvestTime(50)">Calcular</ion-button>
+  <div class="contentbox-harvest-date">
+    <p>{{ currentDate }}</p>
+    <p>{{ ripeningdDays }}</p>
+    <p>{{ harvestDate }}</p>
+  </div>
   
   <h2>Calorias estimadas por cantidad de plantas sembradas</h2>
   
