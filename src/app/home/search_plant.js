@@ -1,4 +1,13 @@
 function searchPlant(){
+    
+  let plantsUrls = [
+    "../plant-garlic/plant-garlic.page.html",
+    "../plant-lemon/plant-lemon.page.html",
+    "../plant-cherry-tomato/plant-cherry-tomato.page.html",
+    "../plant-potato/plant-potato.page.html",
+    "../plant-carrot/plant-carrot.page.html",
+    "../plant-blackberry/plant-blackberry.page.html"
+  ]
   
     let sTerm = document.search_bar.searchbar.value;
       sTerm = sTerm.toLowercase();
