@@ -8,9 +8,15 @@
       Wiki Planta
     </ion-title>
 
-    <ion-searchbar debounce = "100" (ionChange)="_ionChange($event)"></ion-searchbar>
-
   </ion-toolbar>
+  
+  <ion-toolbar>
+    <form name="search_bar">
+    <input id="searchbar" onkeyup="searchPlant()" type="text" name="search" placeholder="Buscar...">
+    <input type="submit" value="BUSCAR" onclick="searchPlant()">
+    </form>
+  </ion-toolbar>
+  
 </ion-header>
 
 
