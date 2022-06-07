@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import userData from '../users.json';
+import {Storage} from '@ionic/storage';
+import { StorageService } from '../services/storage-service.service';
 
 interface User {
   id:Number;
@@ -23,6 +24,7 @@ export class InicioSesionPage implements OnInit {
   Result = "";
 
   constructor(
+    public storage: StorageService,
     public navCtrl: NavController,
   ){}
 
@@ -31,8 +33,28 @@ export class InicioSesionPage implements OnInit {
 
   }
 
+  checkPass(){
+    this.storage.get(this.Pass).then(result => {
+      if (result != null) {
+        this.navCtrl.navigateForward(['home']);
+      }
+      }).catch(e => {
+      console.log('error: '+ e);
+      // Handle errors here
+    });
+  }
+
   onSubmit() {
-    for (let i = 0; i < this.users.length; i++){
+    this.storage.get(this.Email).then(result => {
+      if (result != null) {
+        this.checkPass()
+      }
+      }).catch(e => {
+      console.log('error: '+ e);
+      // Handle errors here
+    });
+
+    /* for (let i = 0; i < this.users.length; i++){
       if(this.Email==this.users[i].email && this.Pass==this.users[i].password){
         console.log("Success");
         this.Result = "";
@@ -42,7 +64,7 @@ export class InicioSesionPage implements OnInit {
       }else{
         this.Result = "Correo o contraseña incorrecta"
       }
-    }
+    } */
   }
 
 }
