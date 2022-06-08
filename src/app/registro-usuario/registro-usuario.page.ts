@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import userData from '../users.json';
 import { NavController } from '@ionic/angular';
 import { StorageService } from '../services/storage-service.service';
 
