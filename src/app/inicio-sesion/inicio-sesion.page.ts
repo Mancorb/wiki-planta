@@ -33,21 +33,14 @@ export class InicioSesionPage implements OnInit {
 
   }
 
-  checkPass(){
-    this.storage.get(this.Pass).then(result => {
-      if (result != null) {
-        this.navCtrl.navigateForward(['home']);
-      }
-      }).catch(e => {
-      console.log('error: '+ e);
-      // Handle errors here
-    });
-  }
 
   onSubmit() {
     this.storage.get(this.Email).then(result => {
       if (result != null) {
-        this.checkPass()
+        console.log('success: '+ result);
+        if(result==result){
+          this.navCtrl.navigateForward(['home']);
+        }
       }
       }).catch(e => {
       console.log('error: '+ e);
