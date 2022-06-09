@@ -1,4 +1,4 @@
-<script type="text/javascript" src="search_plant.js"></script>
+<!-- <script type="text/javascript" src="search_plant.js"></script> -->
 
 <ion-header [translucent]="true">
   <ion-toolbar>
@@ -13,10 +13,10 @@
   </ion-toolbar>
   
   <ion-toolbar>
-    <form name="search_bar" action="home.page.ts" method="POST">
-    <input id="searchbar" type="text" name="search" placeholder="Buscar...">
-    <input type="submit" value="BUSCAR">
-    </form>
+
+    <input id="searchbar" type="text" name="search" placeholder="Buscar..."[(ngModel)]="busqueda">
+    <ion-button (click)="filtrarBusqueda()">Buscar</ion-button>
+
   </ion-toolbar>
   
 </ion-header>
